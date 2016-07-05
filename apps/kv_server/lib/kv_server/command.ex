@@ -7,6 +7,9 @@ defmodule KVServer.Command do
       iex> KVServer.Command.parse "CREATE shopping\r\n"
       {:ok, {:create, "shopping"}}
 
+      iex> KVServer.Command.parse "  CREATE   shopping  \r\n"
+      {:ok, {:create, "shopping"}}
+
   """
   def parse(line) do
     case String.split(line) do
