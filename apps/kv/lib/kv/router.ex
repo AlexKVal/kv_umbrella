@@ -14,7 +14,7 @@ defmodule KV.Router do
       end) || no_entry_error(bucket)
 
     # If the entry node is the current node
-    if elem(entry, 1 == node() do
+    if elem(entry, 1) == node() do
       apply(mod, fun, args)
     else
       {KV.RouterTasks, elem(entry, 1)}
@@ -31,7 +31,7 @@ defmodule KV.Router do
   The routing table.
   """
   def table do
-    [{?a..?m, :"foo@localhost"},
-     {?n..?z, :"bar@localhost"}]
+    [{?a..?m, :"foo@alsbook"},
+     {?n..?z, :"bar@alsbook"}]
   end
 end
