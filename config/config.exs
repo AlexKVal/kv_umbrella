@@ -15,3 +15,14 @@ import_config "../apps/*/config/config.exs"
 #       level: :info,
 #       format: "$date $time [$level] $metadata$message\n",
 #       metadata: [:user_id]
+
+# example
+# config :iex, default_prompt: ">>>"
+
+{:ok, hostname} = :inet.gethostname
+
+routing_table = [{?a..?m, :"foo@#{hostname}"}, {?n..?z, :"bar@#{hostname}"}]
+
+IO.puts "Routing table: #{(inspect routing_table)}"
+
+config :kv, :routing_table, routing_table
