@@ -26,3 +26,4 @@ routing_table = [{?a..?m, :"foo@#{hostname}"}, {?n..?z, :"bar@#{hostname}"}]
 IO.puts "Routing table: #{(inspect routing_table)}"
 
 config :kv, :routing_table, routing_table
+config :kv_server, :port, 4041
